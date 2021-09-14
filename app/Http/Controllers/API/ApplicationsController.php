@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 use DB;
 use Validator;
 
-use App\Application;
+use App\Models\User;
+use App\Models\Application;
 
 use App\Http\Resources\ApplicationsResource;
 use App\Http\Resources\ApplicationResource;

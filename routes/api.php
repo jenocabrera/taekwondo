@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\API\ApplicationsController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,5 +22,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 */
+
+// AUTH //
+Route::post('/login', 'Api\AuthController@login');
 
 Route::resource('application', 'API\ApplicationsController');
