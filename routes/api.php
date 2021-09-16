@@ -24,6 +24,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 */
 
 // AUTH //
-Route::post('/login', 'Api\AuthController@login');
+// 4PointTKD123@
+// 72.167.68.137
+Route::post('/login', 'App\Http\Controllers\API\AuthController@login');
 
-Route::resource('application', 'API\ApplicationsController');
+Route::resource('application', 'App\Http\Controllers\API\ApplicationsController');

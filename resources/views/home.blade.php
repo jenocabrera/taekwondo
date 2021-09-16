@@ -63,79 +63,8 @@
     <body class="antialiased">
         <div class="section" id="registration-section">
             <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <div class="card-header text-white bg-info">
-                                <h5>Multi Step Form</h5>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <form class="registration-form">
-                                @csrf
-                                <div class="form-section">
-                                    <label for="firstname">First Name:</label>
-                                    <input type="text" name="firstname" class="form-control" required />
-                                    <label for="firstname">Last Name:</label>
-                                    <input type="text" name="lastname" class="form-control" required />
-                                </div>
-                                <div class="form-section">
-                                    <label for="email">Email:</label>
-                                    <input type="email" name="email" class="form-control" required />
-                                    <label for="phone">Phone:</label>
-                                    <input type="tel" name="phone" class="form-control" required />
-                                </div>
-                                <div class="form-section">
-                                    <label for="message">Message:</label>
-                                    <textarea name="message" class="form-control"></textarea>
-                                </div>
-                                <div class="form-navigation">
-                                    <button type="button" class="previous btn btn-info float-left">Previous</button>
-                                    <button type="button" class="next btn btn-main float-right">Next</button>
-                                    <button type="submit" class="btn btn-success float-right">Submit</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+			
             </div>
         </div>
-        <script>
-            $(document).ready(function(){
-                $(function(){
-                    var $sections = $('.form-section');
-
-                    function navigateTo(index) {
-                        $sections.removeClass('current').eq(index).addClass('current');
-                        $('.form-navigation .previous').toggle(index > 0);
-                        var atTheEnd = index >= $sections.length - 1;
-                        $('.form-navigation .next').toggle(!atTheEnd);
-                        $('.form-navigation [type=submit]').toggle(atTheEnd);
-                    }
-					
-                    function curIndex() {
-                        return $sections.index($sections.filter('.current'));
-                    }
-					
-                    $('.form-navigation .previous').click(function(){
-                        navigateTo(curIndex() - 1);
-                    });
-					
-                    $('.form-navigation .next').click(function(){
-                        $('.registration-form').parsley().whenValidate({
-                            group: 'block-' + curIndex()
-                        }).done(function(){
-                            navigateTo(curIndex() + 1);
-                        });
-                    });
-					
-                    $sections.each(function(index,section){
-                        $sections.find(':input').attr('data-parsley-group', 'block'+index);
-                    });
-
-                    navigateTo(0);
-                });
-            });
-        </script>
     </body>
 </html>

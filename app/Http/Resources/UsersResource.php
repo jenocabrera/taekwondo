@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-use App\User;
+use App\Models\User;
 
 class UsersResource extends ResourceCollection
 {

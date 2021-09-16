@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-use App\Application;
+use App\Models\Application;
 
 class ApplicationsResource extends ResourceCollection
 {
